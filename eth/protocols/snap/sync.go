@@ -63,7 +63,9 @@ const (
 	// Deployed bytecodes are currently capped at 24KB, so the minimum request
 	// size should be maxRequestSize / 24K. Assuming that most contracts do not
 	// come close to that, requesting 4x should be a good approximation.
-	maxCodeRequestCount = maxRequestSize / (24 * 1024) * 4
+	// maxCodeRequestCount = maxRequestSize / (24 * 1024) * 4
+	// Increase to 100K bytes
+	maxCodeRequestCount = maxRequestSize / (100 * 1024) * 4
 
 	// maxTrieRequestCount is the maximum number of trie node blobs to request in
 	// a single query. If this number is too low, we're not filling responses fully
